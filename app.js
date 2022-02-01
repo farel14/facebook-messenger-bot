@@ -1,12 +1,20 @@
 // Imports dependencies and set up http server
-
-const router = require('./routers');
 require('dotenv').config()
 
 const
   express = require('express'),
-  bodyParser = require('body-parser'),
-  app = express().use(bodyParser.json()).use(bodyParser.urlencoded({extended:true})); // creates express http server
+  { urlencoded, json } = require('body-parser'),
+  app = express()
+  router = require('./routers')
+
+// Parse application/x-www-form-urlencoded
+app.use(urlencoded({ extended: true }))
+
+// Parse application/json.
+app.use(json())
+
+// Serving static files
+app.use(express.static('public'));
 
 // Implement express routing
 app.use('/', router)

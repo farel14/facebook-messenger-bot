@@ -1,0 +1,4 @@
+[
+  { "user": "1", "name": "joni", "messages": ["msg 1", "msg 2"] },
+  { "user": "2", "name": "budi", "messages": ["msg 3", "msg 4"] }
+]
